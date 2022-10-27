@@ -1310,7 +1310,7 @@ plt.show()
 
 Berdasarkan visualisasi data `kondisi_penyerta` dan `gejala`, penyakit `TBC` menjadi kondisi penyerta paling sering diidap pasien dan penyakit `sesak napas` menjadi gejala paling sering dialami pasien. <br><br>
 Lalu, perhatikan bahwa kondisi penyerta `penyakit jantung` dan `kanker` tidak mengalami perawatan. Semua kasus dari kondisi penyerta `hamil`, `gangguan napas lain`, `gangguan imun`, dan `diabetes melitus` seluruhnya sembuh. <br><br>
-Terakhir, gejala `batuk` seluruh kasusnya sembuh.
+Terakhir, untuk gejala `batuk`, seluruh kasusnya sembuh.
 
 Selanjutnya, visualisasi data untuk `jenis_kelamin` dan `kelompok_umur`.
 
