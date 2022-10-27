@@ -3,7 +3,3 @@ Tujuan dari halaman ini adalah melakukan analisis terhadap data COVID-19 di prov
 
 Berikut merupakan tugas akhir Saya.
 [link](final_project.md)
-
-# Build settings
-markdown: kramdown
-theme: minima
