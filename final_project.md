@@ -39,11 +39,7 @@ import seaborn as sns
 resp2 = requests.get('https://data.covid19.go.id/public/api/prov_detail_SUMATERA_UTARA.json', verify=False)
 print("Status keberhasilan", resp2)
 ```
-
-    C:\ProgramData\Anaconda3\lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'data.covid19.go.id'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
-      warnings.warn(
     
-
     Status keberhasilan <Response [200]>
     
 
@@ -296,19 +292,6 @@ df_list_kmbg_bulan
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -459,8 +442,6 @@ Kemudian, Saya melakukan penjumlahan kasus aktif, kematian, dan sembuh dari COVI
 df_kmbg_tahun_bulan = df_list_kmbg_bulan.groupby(['tahun','bulan'])['KASUS','MENINGGAL','SEMBUH'].sum()
 ```
 
-    C:\Users\ofiei\AppData\Local\Temp\ipykernel_4716\1183139619.py:1: FutureWarning: Indexing with multiple keys (implicitly converted to a tuple of keys) will be deprecated, use a list instead.
-      df_kmbg_tahun_bulan = df_list_kmbg_bulan.groupby(['tahun','bulan'])['KASUS','MENINGGAL','SEMBUH'].sum()
     
 
 
@@ -586,157 +567,6 @@ Sebagai akibat dari peningkatan jumlah kasus aktif COVID-19, jumlah pasien yang 
 
 
 ```python
-update2['data']
-```
-
-
-
-
-    {'last_update': '2022-09-30',
-     'kasus': {'kondisi_penyerta': {'current_data': 93,
-       'missing_data': 99.94166828699203,
-       'list_data': [{'key': 'HIPERTENSI', 'doc_count': 39.784946236559136},
-        {'key': 'DIABETES MELITUS', 'doc_count': 31.182795698924732},
-        {'key': 'PENYAKIT JANTUNG', 'doc_count': 15.053763440860216},
-        {'key': 'PENYAKIT PARU OBSTRUKTIF KRONIS',
-         'doc_count': 12.903225806451612},
-        {'key': 'PENYAKIT GINJAL', 'doc_count': 7.526881720430108},
-        {'key': 'GANGGUAN IMUN', 'doc_count': 4.301075268817205},
-        {'key': 'KANKER', 'doc_count': 4.301075268817205},
-        {'key': 'HAMIL', 'doc_count': 3.225806451612903},
-        {'key': 'GANGGUAN NAPAS LAIN', 'doc_count': 1.0752688172043012},
-        {'key': 'TBC', 'doc_count': 1.0752688172043012}]},
-      'jenis_kelamin': {'current_data': 159121,
-       'missing_data': 0.1956934888009414,
-       'list_data': [{'key': 'LAKI-LAKI', 'doc_count': 45.50436460303794},
-        {'key': 'PEREMPUAN', 'doc_count': 54.49563539696206}]},
-      'kelompok_umur': {'current_data': 158939,
-       'missing_data': 0.30984802393481914,
-       'list_data': [{'key': '0-5',
-         'doc_count': 2.679644391873612,
-         'usia': {'value': 5.0}},
-        {'key': '6-18', 'doc_count': 11.198635954674435, 'usia': {'value': 18.0}},
-        {'key': '19-30', 'doc_count': 26.050245691743374, 'usia': {'value': 30.0}},
-        {'key': '31-45', 'doc_count': 27.988096062011213, 'usia': {'value': 45.0}},
-        {'key': '46-59', 'doc_count': 19.355224331347245, 'usia': {'value': 59.0}},
-        {'key': '≥ 60',
-         'doc_count': 12.728153568350123,
-         'usia': {'value': 2022.0}}]},
-      'gejala': {'current_data': 684,
-       'missing_data': 99.57097965916718,
-       'list_data': [{'key': 'BATUK', 'doc_count': 57.748538011695906},
-        {'key': 'RIWAYAT DEMAM', 'doc_count': 40.78947368421053},
-        {'key': 'PILEK', 'doc_count': 34.50292397660819},
-        {'key': 'DEMAM', 'doc_count': 29.53216374269006},
-        {'key': 'SESAK NAPAS', 'doc_count': 19.5906432748538},
-        {'key': 'LEMAS', 'doc_count': 19.005847953216374},
-        {'key': 'SAKIT TENGGOROKAN', 'doc_count': 18.421052631578945},
-        {'key': 'SAKIT KEPALA', 'doc_count': 15.64327485380117},
-        {'key': 'KERAM OTOT', 'doc_count': 9.35672514619883},
-        {'key': 'MUAL', 'doc_count': 7.602339181286549},
-        {'key': 'SAKIT PERUT', 'doc_count': 3.8011695906432745},
-        {'key': 'DIARE', 'doc_count': 1.9005847953216373}]}},
-     'sembuh': {'kondisi_penyerta': {'list_data': [{'key': 'HIPERTENSI',
-         'doc_count': 24.731182795698924},
-        {'key': 'DIABETES MELITUS', 'doc_count': 15.053763440860216},
-        {'key': 'PENYAKIT JANTUNG', 'doc_count': 9.67741935483871},
-        {'key': 'PENYAKIT PARU OBSTRUKTIF KRONIS', 'doc_count': 7.526881720430108},
-        {'key': 'PENYAKIT GINJAL', 'doc_count': 5.376344086021505},
-        {'key': 'GANGGUAN IMUN', 'doc_count': 4.301075268817205},
-        {'key': 'HAMIL', 'doc_count': 3.225806451612903},
-        {'key': 'KANKER', 'doc_count': 2.1505376344086025},
-        {'key': 'GANGGUAN NAPAS LAIN', 'doc_count': 1.0752688172043012},
-        {'key': 'TBC', 'doc_count': 1.0752688172043012}]},
-      'jenis_kelamin': {'list_data': [{'key': 'LAKI-LAKI',
-         'doc_count': 45.328888946088206},
-        {'key': 'PEREMPUAN', 'doc_count': 54.671111053911794}]},
-      'kelompok_umur': {'list_data': [{'key': '0-5',
-         'doc_count': 2.7225522155364574,
-         'usia': {'value': 5.0}},
-        {'key': '6-18', 'doc_count': 11.42106144747523, 'usia': {'value': 18.0}},
-        {'key': '19-30', 'doc_count': 26.492378657664506, 'usia': {'value': 30.0}},
-        {'key': '31-45', 'doc_count': 28.330391310510105, 'usia': {'value': 45.0}},
-        {'key': '46-59', 'doc_count': 19.0823465745835, 'usia': {'value': 59.0}},
-        {'key': '≥ 60',
-         'doc_count': 11.951269794230198,
-         'usia': {'value': 2022.0}}]},
-      'gejala': {'list_data': [{'key': 'BATUK', 'doc_count': 44.15204678362573},
-        {'key': 'RIWAYAT DEMAM', 'doc_count': 32.01754385964912},
-        {'key': 'PILEK', 'doc_count': 27.77777777777778},
-        {'key': 'DEMAM', 'doc_count': 23.684210526315788},
-        {'key': 'SAKIT TENGGOROKAN', 'doc_count': 14.912280701754385},
-        {'key': 'LEMAS', 'doc_count': 14.76608187134503},
-        {'key': 'SESAK NAPAS', 'doc_count': 14.473684210526317},
-        {'key': 'SAKIT KEPALA', 'doc_count': 13.011695906432749},
-        {'key': 'KERAM OTOT', 'doc_count': 7.309941520467836},
-        {'key': 'MUAL', 'doc_count': 6.286549707602338},
-        {'key': 'SAKIT PERUT', 'doc_count': 2.923976608187134},
-        {'key': 'DIARE', 'doc_count': 1.608187134502924}]}},
-     'meninggal': {'kondisi_penyerta': {'list_data': [{'key': 'DIABETES MELITUS',
-         'doc_count': 9.67741935483871},
-        {'key': 'HIPERTENSI', 'doc_count': 9.67741935483871},
-        {'key': 'PENYAKIT JANTUNG', 'doc_count': 5.376344086021505},
-        {'key': 'PENYAKIT PARU OBSTRUKTIF KRONIS', 'doc_count': 3.225806451612903},
-        {'key': 'PENYAKIT GINJAL', 'doc_count': 2.1505376344086025},
-        {'key': 'KANKER', 'doc_count': 1.0752688172043012}]},
-      'jenis_kelamin': {'list_data': [{'key': 'LAKI-LAKI',
-         'doc_count': 53.62362971985384},
-        {'key': 'PEREMPUAN', 'doc_count': 46.37637028014616}]},
-      'kelompok_umur': {'list_data': [{'key': '0-5',
-         'doc_count': 0.7312614259597806,
-         'usia': {'value': 4.0}},
-        {'key': '6-18', 'doc_count': 0.9445460085313834, 'usia': {'value': 18.0}},
-        {'key': '19-30', 'doc_count': 4.3266301035953685, 'usia': {'value': 30.0}},
-        {'key': '31-45', 'doc_count': 12.949421084704449, 'usia': {'value': 45.0}},
-        {'key': '46-59', 'doc_count': 32.51066422912858, 'usia': {'value': 59.0}},
-        {'key': '≥ 60', 'doc_count': 48.53747714808044, 'usia': {'value': 97.0}}]},
-      'gejala': {'list_data': [{'key': 'BATUK', 'doc_count': 3.216374269005848},
-        {'key': 'SESAK NAPAS', 'doc_count': 2.923976608187134},
-        {'key': 'LEMAS', 'doc_count': 2.4853801169590644},
-        {'key': 'RIWAYAT DEMAM', 'doc_count': 2.4853801169590644},
-        {'key': 'DEMAM', 'doc_count': 2.046783625730994},
-        {'key': 'SAKIT KEPALA', 'doc_count': 1.7543859649122806},
-        {'key': 'KERAM OTOT', 'doc_count': 1.608187134502924},
-        {'key': 'PILEK', 'doc_count': 1.1695906432748537},
-        {'key': 'SAKIT TENGGOROKAN', 'doc_count': 0.7309941520467835},
-        {'key': 'MUAL', 'doc_count': 0.5847953216374269},
-        {'key': 'SAKIT PERUT', 'doc_count': 0.43859649122807015},
-        {'key': 'DIARE', 'doc_count': 0.29239766081871343}]}},
-     'perawatan': {'kondisi_penyerta': {'list_data': [{'key': 'DIABETES MELITUS',
-         'doc_count': 6.451612903225806},
-        {'key': 'HIPERTENSI', 'doc_count': 5.376344086021505},
-        {'key': 'PENYAKIT PARU OBSTRUKTIF KRONIS',
-         'doc_count': 2.1505376344086025},
-        {'key': 'KANKER', 'doc_count': 1.0752688172043012}]},
-      'jenis_kelamin': {'list_data': [{'key': 'LAKI-LAKI',
-         'doc_count': 46.89655172413793},
-        {'key': 'PEREMPUAN', 'doc_count': 53.103448275862064}]},
-      'kelompok_umur': {'list_data': [{'key': '0-5',
-         'doc_count': 2.0689655172413794,
-         'usia': {'value': 3.0}},
-        {'key': '6-18', 'doc_count': 9.195402298850574, 'usia': {'value': 18.0}},
-        {'key': '19-30', 'doc_count': 32.18390804597701, 'usia': {'value': 30.0}},
-        {'key': '31-45', 'doc_count': 19.310344827586206, 'usia': {'value': 45.0}},
-        {'key': '46-59', 'doc_count': 17.47126436781609, 'usia': {'value': 59.0}},
-        {'key': '≥ 60',
-         'doc_count': 19.770114942528735,
-         'usia': {'value': 94.0}}]},
-      'gejala': {'list_data': [{'key': 'BATUK', 'doc_count': 10.380116959064328},
-        {'key': 'RIWAYAT DEMAM', 'doc_count': 6.286549707602338},
-        {'key': 'PILEK', 'doc_count': 5.555555555555555},
-        {'key': 'DEMAM', 'doc_count': 3.8011695906432745},
-        {'key': 'SAKIT TENGGOROKAN', 'doc_count': 2.7777777777777777},
-        {'key': 'SESAK NAPAS', 'doc_count': 2.1929824561403506},
-        {'key': 'LEMAS', 'doc_count': 1.7543859649122806},
-        {'key': 'SAKIT KEPALA', 'doc_count': 0.8771929824561403},
-        {'key': 'MUAL', 'doc_count': 0.7309941520467835},
-        {'key': 'KERAM OTOT', 'doc_count': 0.43859649122807015},
-        {'key': 'SAKIT PERUT', 'doc_count': 0.43859649122807015}]}}}
-
-
-
-
-```python
 update2['data'].keys()
 ```
 
@@ -837,19 +667,6 @@ df_gabung
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1126,19 +943,6 @@ df_gabung.loc[['jenis_kelamin','kelompok_umur']]
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1261,19 +1065,6 @@ kondisi_penyerta_urut
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1371,19 +1162,6 @@ gejala_urut
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1545,19 +1323,6 @@ df_gabung.loc[['jenis_kelamin','kelompok_umur']]
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
